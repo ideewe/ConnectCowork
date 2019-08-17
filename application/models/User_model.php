@@ -9,6 +9,30 @@ class User_model extends CI_Model {
         $resultado = $this->db->get("users");
         return $resultado->result();
     }
+
+    public function getAllRenters()
+    {
+        $this->db->where("Deleted","0");
+        $this->db->where("RoleId","3");
+        $resultado = $this->db->get("users");
+        return $resultado->result();
+    }
+
+    public function getAllFlexs()
+    {
+        $this->db->where("Deleted","0");
+        $this->db->where("RoleId","4");
+        $resultado = $this->db->get("users");
+        return $resultado->result();
+    }
+
+    public function getAllVirtuals()
+    {
+        $this->db->where("Deleted","0");
+        $this->db->where("RoleId","5");
+        $resultado = $this->db->get("users");
+        return $resultado->result();
+    }
     
 	public function login( $username, $password)
 	{

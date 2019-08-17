@@ -13,6 +13,9 @@ class Users extends CI_Controller {
     {
         $data = array(
             'users' => $this->User_model->getAllUsers(),
+            'renters'  => $this->User_model->getAllRenters(),
+            'Flexs'  => $this->User_model->getAllFlexs(),
+            'Virtuals'  => $this->User_model->getAllVirtuals(),
         );
         $this->load->view('layouts/header');
 		$this->load->view('layouts/aside');
