@@ -72,12 +72,12 @@
                                                             <td>
                                                                 <div class="custom-control custom-checkbox">
                                                                     <input type="checkbox" class="custom-control-input checkSingle"
-                                                                        id="user_id_1" required><label
-                                                                        class="custom-control-label" for="user_id_1"></label>
+                                                                        id=<?php echo $user->UserId;?> required><label
+                                                                        class="custom-control-label" for=<?php echo $user->UserId;?>></label>
                                                                 </div>
                                                             </td>
     
-                                                            <td><?php echo $user->id;?></td>
+                                                            <td><?php echo $user->UserId;?></td>
                                                             <td>
                                                                 <div class="avatar avatar-md mr-3 mt-1 float-left">
                                                                     <span class="avatar-letter avatar-letter-a  avatar-md circle"></span>
@@ -148,12 +148,12 @@
                                                             <td>
                                                                 <div class="custom-control custom-checkbox">
                                                                     <input type="checkbox" class="custom-control-input checkSingle"
-                                                                        id="user_id_1" required><label
-                                                                        class="custom-control-label" for="user_id_1"></label>
+                                                                        id=<?php echo $renter->UserId;?> required><label
+                                                                        class="custom-control-label" for=<?php echo $renter->UserId;?>></label>
                                                                 </div>
                                                             </td>
     
-                                                            <td><?php echo $renter->id;?></td>
+                                                            <td><?php echo $renter->UserId;?></td>
                                                             <td>
                                                                 <div class="avatar avatar-md mr-3 mt-1 float-left">
                                                                     <span class="avatar-letter avatar-letter-a  avatar-md circle"></span>
@@ -224,12 +224,12 @@
                                                             <td>
                                                                 <div class="custom-control custom-checkbox">
                                                                     <input type="checkbox" class="custom-control-input checkSingle"
-                                                                        id="user_id_1" required><label
-                                                                        class="custom-control-label" for="user_id_1"></label>
+                                                                        id=<?php echo $Flex->UserId;?> required><label
+                                                                        class="custom-control-label" for=<?php echo $Flex->UserId;?>></label>
                                                                 </div>
                                                             </td>
     
-                                                            <td><?php echo $Flex->id;?></td>
+                                                            <td><?php echo $Flex->UserId;?></td>
                                                             <td>
                                                                 <div class="avatar avatar-md mr-3 mt-1 float-left">
                                                                     <span class="avatar-letter avatar-letter-a  avatar-md circle"></span>
@@ -300,12 +300,12 @@
                                                             <td>
                                                                 <div class="custom-control custom-checkbox">
                                                                     <input type="checkbox" class="custom-control-input checkSingle"
-                                                                        id="user_id_1" required><label
-                                                                        class="custom-control-label" for="user_id_1"></label>
+                                                                        id=<?php echo $Virtual->UserId;?> required><label
+                                                                        class="custom-control-label" for=<?php echo $Virtual->UserId;?>></label>
                                                                 </div>
                                                             </td>
     
-                                                            <td><?php echo $Virtual->id;?></td>
+                                                            <td><?php echo $Virtual->UserId;?></td>
                                                             <td>
                                                                 <div class="avatar avatar-md mr-3 mt-1 float-left">
                                                                     <span class="avatar-letter avatar-letter-a  avatar-md circle"></span>
