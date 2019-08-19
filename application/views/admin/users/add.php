@@ -39,40 +39,43 @@
                                             </div>
                                             <div class="form-group col-6  m-0">
                                                 <label for="username" class="col-form-label s-12"><i class="icon-user"></i>Nombre de Usuario</label>
-                                                <input id="username" placeholder="Nombre de Usuario" class="form-control r-0 light s-12 " type="text">
+                                                <input id="username" name="Username" placeholder="Nombre de Usuario" class="form-control r-0 light s-12 " type="text">
                                             </div>
                                         </div>
 
-                                        <div class="form-row">
+                                        <div class="form-row">                                            
                                             <div class="form-group col-6 m-0">
-                                                <label for="RTN" class="col-form-label s-12"><i class="icon-fingerprint"></i>RTN</label>
-                                                <input id="RTN" placeholder="ingrese el RTN" class="form-control r-0 light s-12 date-picker" type="text">
+                                                <label class="col-form-label s-12" for="inlineFormCustomSelectPref">Seleccione un Genero</label>
+                                                <select class="custom-select form-control r-0 light s-12" id="inlineFormCustomSelectPref" name="GenderId" >
+                                                    <option selected>Escoge una Opción...</option>
+                                                    <?php if(!empty($genders)):?>
+                                                        <?php foreach($genders as $gender):?> 
+                                                            <option value=<?php echo $gender->GenderId;?>><?php echo $gender->GenderName;?></option>    
+                                                        <?php endforeach;?>
+                                                    <?php endif;?>                                                    
+                                                </select>
                                             </div>
+
                                             <div class="form-group col-6 m-0">
                                                 <label for="birthday" class="col-form-label s-12"><i class="icon-calendar mr-2"></i>Fecha de nacimiento</label>
-                                                <input id="birthday" placeholder="seleccione la fecha de cumpleaños" class="date-time-picker form-control r-0 light s-12 " 
+                                                <input id="birthday" name="Birthday" placeholder="seleccione la fecha de cumpleaños" class="date-time-picker form-control r-0 light s-12 " 
                                                 type="text"  data-options='{"timepicker":false, "format":"Y/m/d"}' value="2019/08/01">
                                             </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-12 m-0">
-                                            <label for="CompanyName"  class="col-form-label s-12">Nombre de la empresa</label>
-                                            <input type="text" class="form-control r-0 light s-12" id="CompanyName" placeholder="Ingrese nombre de la empresa">
+                                        </div>                                        
+                                        <div class="form-row">                                          
+                                            <div class="form-group col-6 m-0">
+                                                <label for="RTN" class="col-form-label s-12"><i class="icon-fingerprint"></i>RTN</label>
+                                                <input id="RTN"  name="RTN" placeholder="ingrese el RTN" class="form-control r-0 light s-12 date-picker" type="text">
+                                            </div>
+                                            <div class="form-group col-6 m-0">
+                                                <label for="CompanyName"  class="col-form-label s-12">Nombre de la empresa</label>
+                                                <input type="text" name="CompanyName" class="form-control r-0 light s-12" id="CompanyName" placeholder="Ingrese nombre de la empresa">
                                             </div>
                                         </div>
-
-
-                                        <div class="form-group m-0">
-                                            <label for="dob" class="col-form-label s-12">Genero</label>
-                                            <br>
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="male" name="gender" class="custom-control-input">
-                                                <label class="custom-control-label m-0" for="male">Masculino</label>
-                                            </div>
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="female" name="gender" class="custom-control-input">
-                                                <label class="custom-control-label m-0" for="female">Femenino</label>
-                                            </div>
+                                        <div class="form-group m-0">                                      
+                                            <label for="Email" class="col-form-label s-12"><i class="icon-envelope-o mr-2"></i>Email</label>
+                                            <input id="Email" name="Email" placeholder="usuario@email.com" class="form-control r-0 light s-12 " type="text">
+                                           
                                         </div>
                                     </div>
                                     <div class="col-md-3 offset-md-1">
@@ -86,36 +89,42 @@
                                     </div>
 
                                 </div>
-
-                                <div class="form-row mt-1">
-                                    <div class="form-group col-4 m-0">
-                                        <label for="Email" class="col-form-label s-12"><i class="icon-envelope-o mr-2"></i>Email</label>
-                                        <input id="Email" placeholder="usuario@email.com" class="form-control r-0 light s-12 " type="text">
-                                    </div>
-
-                                    <div class="form-group col-4 m-0">
-                                        <label for="Phone" class="col-form-label s-12"><i class="icon-phone mr-2"></i>Teléfono</label>
-                                        <input id="Phone" placeholder="ej: 2222-2222" class="form-control r-0 light s-12 " type="text">
-                                    </div>
-                                    <div class="form-group col-4 m-0">
-                                        <label for="AlternativePhone" class="col-form-label s-12"><i class="icon-mobile-phone mr-2"></i>Celular</label>
-                                        <input id="AlternativePhone" placeholder="ej: 3333-3333" class="form-control r-0 light s-12 " type="text">
-                                    </div>
-
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-9 m-0">
-                                        <label for="Address"  class="col-form-label s-12">Dirección</label>
-                                        <input type="text" class="form-control r-0 light s-12" id="Address"
-                                               placeholder="Ingrese una dirección">
-                                    </div>
-
-                                    <div class="form-group col-3 m-0">
-                                        <label for="inputCity" class="col-form-label s-12">Ciudad</label>
-                                        <input type="text" class="form-control r-0 light s-12" id="inputCity">
-                                    </div>
-                                </div>
                             </div>
+
+                            <hr>
+                                <div class="card-body">
+                                    <h5 class="card-title">información de Contacto</h5>
+                                    <div class="form-row">                                        
+                                        <div class="form-group col-4 m-0">
+                                            <label for="Phone" class="col-form-label s-12"><i class="icon-phone mr-2"></i>Teléfono</label>
+                                            <input id="Phone" name="Phone" placeholder="ej: 2222-2222" class="form-control r-0 light s-12 " type="text">
+                                        </div>
+                                        <div class="form-group col-4 m-0">
+                                            <label for="AlternativePhone" class="col-form-label s-12"><i class="icon-mobile-phone mr-2"></i>Celular</label>
+                                            <input id="AlternativePhone" name="AlternativePhone" placeholder="ej: 3333-3333" class="form-control r-0 light s-12 " type="text">
+                                        </div>
+                                        <div class="form-group col-4 m-0">
+                                                <label for="inputCity" class="col-form-label s-12">Ciudad Domicilio</label>
+                                                <input type="text" class="form-control r-0 light s-12" id="inputCity">
+                                        </div>
+                                    </div>                              
+                                    <div class="form-row">
+                                         <div class="form-group col-9 m-0">
+                                            <label for="Address"  class="col-form-label s-12">Dirección Domicilio</label>
+                                            <input type="text" class="form-control r-0 light s-12" id="Address"
+                                                placeholder="Ingrese una dirección">
+                                            </div>                                           
+                                    </div>                      
+                                    <div class="form-row">
+                                        <div class="form-group col-9 m-0">
+                                            <label for="Address"  class="col-form-label s-12">Dirección Oficina</label>
+                                            <input type="text" class="form-control r-0 light s-12" id="Address"
+                                                placeholder="Ingrese una dirección">
+                                        </div>                                            
+                                    </div>                                    
+                                </div>  
+
+                            
                             <hr>
                             <div class="card-body">
                                 <h5 class="card-title">ENROLLMENT</h5>

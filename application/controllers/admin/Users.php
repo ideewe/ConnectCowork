@@ -28,7 +28,8 @@ class Users extends CI_Controller {
     public function add()
     {
         $data = array(
-            'roles' => $this->User_model->getAllRoles(),                
+            'roles' => $this->User_model->getAllRoles(),   
+            'genders' => $this->User_model->getAllGenders(),                 
         );
         $this->load->view('layouts/header');
 		$this->load->view('layouts/aside');

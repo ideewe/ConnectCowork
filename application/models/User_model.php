@@ -22,6 +22,14 @@ class User_model extends CI_Model {
         $resultado = $this->db->get();
         return $resultado->result();
     }
+    public function getAllGenders()
+    {
+        $this->db->select('g.GenderId, g.GenderName');
+        $this->db->from('genders g');              
+        $this->db->where('g.Deleted','0');       
+        $resultado = $this->db->get();
+        return $resultado->result();
+    }
 
     public function getAllRenters()
     {
