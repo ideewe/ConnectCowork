@@ -25,7 +25,7 @@
         <div class="animated fadeInUpShort">
             <div class="row my-3">
                 <div class="col-md-12">
-                    <form action="<?php echo base_url();?>user/insertUser" method="POST">
+                    <form action="<?php echo base_url();?>admin/users/store" method="POST">
                         <div class="card no-b  no-r">
                             <div class="card-body">
                                 <h5 class="card-title">Agregar Coworker</h5>
@@ -35,11 +35,11 @@
                                     <div class="form-row">
                                             <div class="form-group col-6  m-0">
                                                 <label for="FullName" class="col-form-label s-12"><i class="icon-user"></i>Nombre</label>
-                                                <input id="FullName" placeholder="Ingrese el nombre de coworker" class="form-control r-0 light s-12 " type="text">
+                                                <input id="FullName" name="FullName" placeholder="Ingrese el nombre de coworker" class="form-control r-0 light s-12 " type="text">
                                             </div>
                                             <div class="form-group col-6  m-0">
-                                                <label for="Username" class="col-form-label s-12"><i class="icon-user"></i>Nombre de Usuario</label>
-                                                <input id="Username" placeholder="Nombre de Usuario" class="form-control r-0 light s-12 " type="text">
+                                                <label for="username" class="col-form-label s-12"><i class="icon-user"></i>Nombre de Usuario</label>
+                                                <input id="username" placeholder="Nombre de Usuario" class="form-control r-0 light s-12 " type="text">
                                             </div>
                                         </div>
 
@@ -148,11 +148,11 @@
                                 <div class="form-row">
                                     <div class="form-group col-5 m-0">
                                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Seleccione un role</label>
-                                            <select class="custom-select my-1 mr-sm-2 form-control r-0 light s-12" id="RoleName">
+                                            <select class="custom-select my-1 mr-sm-2 form-control r-0 light s-12" id="inlineFormCustomSelectPref">
                                                 <option selected>Escoge una Opción...</option>
                                                 <?php if(!empty($roles)):?>
                                                     <?php foreach($roles as $rol):?> 
-                                                        option value=<?php echo $rol->RoleId;?>><?php echo $rol->RoleName;?></option>    
+                                                        <option value=<?php echo $rol->RoleId;?>><?php echo $rol->RoleName;?></option>    
                                                     <?php endforeach;?>
                                                 <?php endif;?>                                                    
                                             </select>

@@ -37,14 +37,14 @@ class Users extends CI_Controller {
 		$this->load->view('layouts/footer');   
     }
 
-    public function insert()
+    public function store()
     {
         $FullName = $this->input->post("FullName");
         $CompanyName = $this->input->post("CompanyName");
         $UserTypeId= $this->input->post("UserTypeId");
         $IsAdmin = $this->input->post("IsAdmin");
         $RoleId = $this->input->post("RoleId");
-        $Username = $this->input->post("Username");
+        $Username = $this->input->post("username");
         $Email = $this->input->post("Email");
         $Password = $this->input->post("Password");
         $Image = $this->input->post("Image");
@@ -69,6 +69,10 @@ class Users extends CI_Controller {
         $AccountId = $this->input->post("AccountId");
         $City = $this->input->post("City");
 
+        echo $FullName;
+        echo $this->input->post("FullName");
+
+/*
         $data = array(                       
             'FullName' => $FullName,
             'CompanyName' => $CompanyName,
@@ -101,7 +105,7 @@ class Users extends CI_Controller {
             'City'=> $City
         ); 
         
-        if ($this->user_model->insert($data))
+        if ($this->User_model->insert($data))
         {
             redirect(base_url().'admin/users');
         }
@@ -110,7 +114,7 @@ class Users extends CI_Controller {
             $this->session->set_flashdata("error", "No se pudo guardar la información");            
             redirect(base_url().'admin/users/add');
         }
-        
+        */
 
     }
 }
