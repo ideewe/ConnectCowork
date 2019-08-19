@@ -25,7 +25,7 @@
         <div class="animated fadeInUpShort">
             <div class="row my-3">
                 <div class="col-md-12">
-                    <form action="#">
+                    <form action="<?php echo base_url();?>user/insertUser" method="POST">
                         <div class="card no-b  no-r">
                             <div class="card-body">
                                 <h5 class="card-title">Agregar Coworker</h5>
@@ -34,19 +34,19 @@
                                     <div class="col-md-8">
                                     <div class="form-row">
                                             <div class="form-group col-6  m-0">
-                                                <label for="fullname" class="col-form-label s-12"><i class="icon-user"></i>Nombre</label>
-                                                <input id="fullname" placeholder="Ingrese el nombre de coworker" class="form-control r-0 light s-12 " type="text">
+                                                <label for="FullName" class="col-form-label s-12"><i class="icon-user"></i>Nombre</label>
+                                                <input id="FullName" placeholder="Ingrese el nombre de coworker" class="form-control r-0 light s-12 " type="text">
                                             </div>
                                             <div class="form-group col-6  m-0">
-                                                <label for="username" class="col-form-label s-12"><i class="icon-user"></i>Nombre de Usuario</label>
-                                                <input id="username" placeholder="Nombre de Usuario" class="form-control r-0 light s-12 " type="text">
+                                                <label for="Username" class="col-form-label s-12"><i class="icon-user"></i>Nombre de Usuario</label>
+                                                <input id="Username" placeholder="Nombre de Usuario" class="form-control r-0 light s-12 " type="text">
                                             </div>
                                         </div>
 
                                         <div class="form-row">
                                             <div class="form-group col-6 m-0">
-                                                <label for="cnic" class="col-form-label s-12"><i class="icon-fingerprint"></i>RTN</label>
-                                                <input id="cnic" placeholder="ingrese el RTN" class="form-control r-0 light s-12 date-picker" type="text">
+                                                <label for="RTN" class="col-form-label s-12"><i class="icon-fingerprint"></i>RTN</label>
+                                                <input id="RTN" placeholder="ingrese el RTN" class="form-control r-0 light s-12 date-picker" type="text">
                                             </div>
                                             <div class="form-group col-6 m-0">
                                                 <label for="birthday" class="col-form-label s-12"><i class="icon-calendar mr-2"></i>Fecha de nacimiento</label>
@@ -54,6 +54,13 @@
                                                 type="text"  data-options='{"timepicker":false, "format":"Y/m/d"}' value="2019/08/01">
                                             </div>
                                         </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-12 m-0">
+                                            <label for="CompanyName"  class="col-form-label s-12">Nombre de la empresa</label>
+                                            <input type="text" class="form-control r-0 light s-12" id="CompanyName" placeholder="Ingrese nombre de la empresa">
+                                            </div>
+                                        </div>
+
 
                                         <div class="form-group m-0">
                                             <label for="dob" class="col-form-label s-12">Genero</label>
@@ -69,7 +76,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3 offset-md-1">
-                                        <input hidden id="file" name="file"/>
+                                        <input hidden id="Image" name="file"/>
                                         <div class="dropzone dropzone-file-area pt-4 pb-4" id="fileUpload">
                                             <div class="dz-default dz-message">
                                                 <span>Soltar una imagen de tamaño 64x64 para el usuario</span>
@@ -82,24 +89,24 @@
 
                                 <div class="form-row mt-1">
                                     <div class="form-group col-4 m-0">
-                                        <label for="email" class="col-form-label s-12"><i class="icon-envelope-o mr-2"></i>Email</label>
-                                        <input id="email" placeholder="usuario@email.com" class="form-control r-0 light s-12 " type="text">
+                                        <label for="Email" class="col-form-label s-12"><i class="icon-envelope-o mr-2"></i>Email</label>
+                                        <input id="Email" placeholder="usuario@email.com" class="form-control r-0 light s-12 " type="text">
                                     </div>
 
                                     <div class="form-group col-4 m-0">
-                                        <label for="phone" class="col-form-label s-12"><i class="icon-phone mr-2"></i>Teléfono</label>
-                                        <input id="phone" placeholder="ej: 2222-2222" class="form-control r-0 light s-12 " type="text">
+                                        <label for="Phone" class="col-form-label s-12"><i class="icon-phone mr-2"></i>Teléfono</label>
+                                        <input id="Phone" placeholder="ej: 2222-2222" class="form-control r-0 light s-12 " type="text">
                                     </div>
                                     <div class="form-group col-4 m-0">
-                                        <label for="mobile" class="col-form-label s-12"><i class="icon-mobile-phone mr-2"></i>Celular</label>
-                                        <input id="mobile" placeholder="ej: 3333-3333" class="form-control r-0 light s-12 " type="text">
+                                        <label for="AlternativePhone" class="col-form-label s-12"><i class="icon-mobile-phone mr-2"></i>Celular</label>
+                                        <input id="AlternativePhone" placeholder="ej: 3333-3333" class="form-control r-0 light s-12 " type="text">
                                     </div>
 
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-9 m-0">
-                                        <label for="address"  class="col-form-label s-12">Dirección</label>
-                                        <input type="text" class="form-control r-0 light s-12" id="address"
+                                        <label for="Address"  class="col-form-label s-12">Dirección</label>
+                                        <input type="text" class="form-control r-0 light s-12" id="Address"
                                                placeholder="Ingrese una dirección">
                                     </div>
 
@@ -137,23 +144,24 @@
                             </div>
                             <hr>
                             <div class="card-body">
-                                <h5 class="card-title">PARENT / GUARDIAN</h5>
+                                <h5 class="card-title">Tipo de Roles</h5>
                                 <div class="form-row">
                                     <div class="form-group col-5 m-0">
-                                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Select A parent</label>
-                                        <select class="custom-select my-1 mr-sm-2 form-control r-0 light s-12" id="inlineFormCustomSelectPref">
-                                            <option selected>Choose...</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Seleccione un role</label>
+                                            <select class="custom-select my-1 mr-sm-2 form-control r-0 light s-12" id="RoleName">
+                                                <option selected>Escoge una Opción...</option>
+                                                <?php if(!empty($roles)):?>
+                                                    <?php foreach($roles as $rol):?> 
+                                                        option value=<?php echo $rol->RoleId;?>><?php echo $rol->RoleName;?></option>    
+                                                    <?php endforeach;?>
+                                                <?php endif;?>                                                    
+                                            </select>
                                     </div>
-                                </div>
-                                <a href="#" class="btn btn-primary bg-primary btn-sm mt-2">Add New Guardian</a>
+                                </div>                                
                             </div>
                             <hr>
                             <div class="card-body">
-                                <button type="submit" class="btn btn-primary btn-lg"><i class="icon-save mr-2"></i>Save Data</button>
+                                <button type="submit" class="btn btn-primary btn-lg"><i class="icon-save mr-2"></i>Guardar información</button>
                             </div>
                         </div>
                     </form>

@@ -92,7 +92,7 @@
                                                             <td><?php echo $user->Username;?></td>
                                                             <td><?php echo $user->RTN;?></td>                                                        
                                                             <td><?php echo $user->Phone;?></td>                                                   
-                                                            <td><span class="r-3 badge badge-success "><?php echo $user->RoleId;?></span></td>
+                                                            <td><span class="r-3 badge badge-success "><?php echo $user->RoleName;?></span></td>
                                                             <?php   if($user->Status === 'Activo'): ?>
                                                                 <td><span class="icon icon-circle s-12  mr-2 text-success"></span> <?php echo $user->Status;?></td> 
                                                             <?php else: ?>    
@@ -168,7 +168,7 @@
                                                             <td><?php echo $renter->Username;?></td>
                                                             <td><?php echo $renter->RTN;?></td>                                                        
                                                             <td><?php echo $renter->Phone;?></td>                                                   
-                                                            <td><span class="r-3 badge badge-success "><?php echo $renter->RoleId;?></span></td>
+                                                            <td><span class="r-3 badge badge-success "><?php echo $renter->RoleName;?></span></td>
                                                             <?php   if($renter->Status === 'Activo'): ?>
                                                                 <td><span class="icon icon-circle s-12  mr-2 text-success"></span> <?php echo $renter->Status;?></td> 
                                                             <?php else: ?>    
@@ -244,7 +244,7 @@
                                                             <td><?php echo $Flex->Username;?></td>
                                                             <td><?php echo $Flex->RTN;?></td>                                                        
                                                             <td><?php echo $Flex->Phone;?></td>                                                   
-                                                            <td><span class="r-3 badge badge-success "><?php echo $Flex->RoleId;?></span></td>
+                                                            <td><span class="r-3 badge badge-success "><?php echo $Flex->RoleName;?></span></td>
                                                             <?php   if($Flex->Status === 'Activo'): ?>
                                                                 <td><span class="icon icon-circle s-12  mr-2 text-success"></span> <?php echo $Flex->Status;?></td> 
                                                             <?php else: ?>    
@@ -320,7 +320,7 @@
                                                             <td><?php echo $Virtual->Username;?></td>
                                                             <td><?php echo $Virtual->RTN;?></td>                                                        
                                                             <td><?php echo $Virtual->Phone;?></td>                                                   
-                                                            <td><span class="r-3 badge badge-success "><?php echo $Virtual->RoleId;?></span></td>
+                                                            <td><span class="r-3 badge badge-success "><?php echo $Virtual->RoleName;?></span></td>
                                                             <?php   if($Virtual->Status === 'Activo'): ?>
                                                                 <td><span class="icon icon-circle s-12  mr-2 text-success"></span> <?php echo $Virtual->Status;?></td> 
                                                             <?php else: ?>    
