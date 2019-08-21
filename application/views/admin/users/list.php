@@ -29,7 +29,7 @@
                            aria-controls="v-pills-sellers"><i class="icon  icon-face"></i> Oficina Virtual</a>
                     </li>
                     <li class="float-right">
-                        <a class="nav-link"  href="Crear-Coworker.html" ><i class="icon icon-plus-circle"></i> Crear Coworker</a>
+                        <a class="nav-link"  href="<?php echo base_url();?>admin/users/add" ><i class="icon icon-plus-circle"></i> Crear Coworker</a>
                     </li>
                 </ul>
             </div>

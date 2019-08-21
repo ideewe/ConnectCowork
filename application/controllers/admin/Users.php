@@ -62,7 +62,7 @@ class Users extends CI_Controller {
         $Phone = $this->input->post("Phone");
         $AlternativePhone = $this->input->post("AlternativePhone");
         $RTN = $this->input->post("RTN");
-        $Genero = $this->input->post("Genero");
+        $GenderId = $this->input->post("GenderId");
         $StickyNote = $this->input->post("StickyNote");
         $skype = $this->input->post("skype");
         $EnableWebNotification = $this->input->post("EnableWebNotification");
@@ -73,7 +73,66 @@ class Users extends CI_Controller {
         echo $FullName;
         echo $this->input->post("FullName");
 
-/*
+        $this->form_validation->set_rules(
+            'Username', 'Username',
+            'required|min_length[8]|max_length[24]|is_unique[users.Username]',
+            array(
+                    'required'      => 'Es un campo requerido por favor ingrese %s.',
+                    'is_unique'     => 'Este Usuario %s ya existe por favor verificar con otro nombre de usuario.'
+            )
+    );
+        $this->form_validation->set_rules('Email', 'Email', 'required');
+
+        if ($this->form_validation->run()) 
+        {
+            $data = array(                       
+                'FullName' => $FullName,
+                'CompanyName' => $CompanyName,
+                'UserTypeId' => $UserTypeId,
+                'IsAdmin'=> $IsAdmin,
+                'RoleId'=> $RoleId,
+                'Username'=> $Username,
+                'Email'=> $Email,
+                'Password'=> $Password,
+                'Image'=> $Image,
+                'Status'=> $Status,
+                'MessageCheckedAt'=> $MessageCheckedAt,
+                'ClientId'=> $ClientId,
+                'NotificationCheckedAt'=> $NotificationCheckedAt,
+                'isPrimaryContact'=> $isPrimaryContact,
+                'JobTitle'=> $JobTitle,
+                'DisableLogin'=> $DisableLogin,
+                'Note'=> $Note,
+                'Address'=> $Address,
+                'AlternativeAddress'=> $AlternativeAddress,
+                'Phone'=> $Phone,
+                'AlternativePhone'=> $AlternativePhone,
+                'RTN'=> $RTN,
+                'GenderId'=> $GenderId,
+                'StickyNote'=> $StickyNote,
+                'skype'=> $skype,
+                'EnableWebNotification'=> $EnableWebNotification,
+                'EnableEmailNotification'=> $EnableEmailNotification,
+                'AccountId'=> $AccountId, 
+                'City'=> $City
+            ); 
+            
+            if ($this->User_model->save($data))
+            {
+                redirect(base_url().'admin/users');
+            }
+            else
+            {            
+                $this->session->set_flashdata("error", "No se pudo guardar la información");            
+                redirect(base_url().'admin/users/add');
+            }
+        
+        }
+        else
+        {
+            $this->add();
+        }
+
         $data = array(                       
             'FullName' => $FullName,
             'CompanyName' => $CompanyName,
@@ -97,7 +156,7 @@ class Users extends CI_Controller {
             'Phone'=> $Phone,
             'AlternativePhone'=> $AlternativePhone,
             'RTN'=> $RTN,
-            'Genero'=> $Genero,
+            'GenderId'=> $GenderId,
             'StickyNote'=> $StickyNote,
             'skype'=> $skype,
             'EnableWebNotification'=> $EnableWebNotification,
@@ -106,7 +165,7 @@ class Users extends CI_Controller {
             'City'=> $City
         ); 
         
-        if ($this->User_model->insert($data))
+        if ($this->User_model->save($data))
         {
             redirect(base_url().'admin/users');
         }
@@ -115,7 +174,7 @@ class Users extends CI_Controller {
             $this->session->set_flashdata("error", "No se pudo guardar la información");            
             redirect(base_url().'admin/users/add');
         }
-        */
+        
 
     }
 }

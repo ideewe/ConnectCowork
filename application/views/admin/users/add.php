@@ -15,7 +15,7 @@
                         <a class="nav-link"  href="panel-page-users.html"><i class="icon icon-home2"></i>Todos los Cowokers</a>
                     </li>
                     <li>
-                        <a class="nav-link active"  href="panel-page-users-create.html" ><i class="icon icon-plus-circle"></i> Agregar un nuevo coworker</a>
+                        <a class="nav-link active"  href="<?php echo base_url();?>admin/users/add" ><i class="icon icon-plus-circle"></i> Agregar un nuevo coworker</a>
                     </li>
                 </ul>
             </div>
@@ -24,7 +24,7 @@
     <div class="container-fluid animatedParent animateOnce">
         <div class="animated fadeInUpShort">
             <div class="row my-3">
-                <div class="col-md-12">
+                <div class="col-md-12">                            
                     <form action="<?php echo base_url();?>admin/users/store" method="POST">
                         <div class="card no-b  no-r">
                             <div class="card-body">
@@ -36,6 +36,7 @@
                                             <div class="form-group col-6  m-0">
                                                 <label for="FullName" class="col-form-label s-12"><i class="icon-user"></i>Nombre</label>
                                                 <input id="FullName" name="FullName" placeholder="Ingrese el nombre de coworker" class="form-control r-0 light s-12 " type="text">
+                                                <?php echo form_error("Nombre", "<span clas",""); ?>      
                                             </div>
                                             <div class="form-group col-6  m-0">
                                                 <label for="username" class="col-form-label s-12"><i class="icon-user"></i>Nombre de Usuario</label>
@@ -79,8 +80,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3 offset-md-1">
-                                        <input hidden id="Image" name="file"/>
-                                        <div class="dropzone dropzone-file-area pt-4 pb-4" id="fileUpload">
+                                        <input hidden id="Image" name="Image"/>
+                                        <div class="dropzone dropzone-file-area pt-4 pb-4" name="Image" id="fileUpload">
                                             <div class="dz-default dz-message">
                                                 <span>Soltar una imagen de tamaño 64x64 para el usuario</span>
                                                 <div>También puede hacer clic para abrir el navegador de archivos</div>
@@ -157,7 +158,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-5 m-0">
                                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Seleccione un role</label>
-                                            <select class="custom-select my-1 mr-sm-2 form-control r-0 light s-12" id="inlineFormCustomSelectPref">
+                                            <select name="RoleId" class="custom-select my-1 mr-sm-2 form-control r-0 light s-12" id="inlineFormCustomSelectPref">
                                                 <option selected>Escoge una Opción...</option>
                                                 <?php if(!empty($roles)):?>
                                                     <?php foreach($roles as $rol):?> 

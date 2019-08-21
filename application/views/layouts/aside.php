@@ -63,7 +63,7 @@
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url();?>admin/users"><i class="icon icon-circle-o"></i>Todos Coworker</a>
                     </li>
-                    <li><a href="Crear-Cowork.html"><i class="icon icon-add"></i>nuevo coworker</a>
+                    <li><a href="<?php echo base_url();?>admin/users/add"><i class="icon icon-add"></i>nuevo coworker</a>
                     </li>                    
                 </ul>
             </li>          
