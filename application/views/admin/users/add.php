@@ -35,12 +35,15 @@
                                     <div class="form-row">
                                             <div class="form-group col-6  m-0">
                                                 <label for="FullName" class="col-form-label s-12"><i class="icon-user"></i>Nombre</label>
-                                                <input id="FullName" name="FullName" placeholder="Ingrese el nombre de coworker" class="form-control r-0 light s-12 " type="text">
-                                                <?php echo form_error("Nombre", "<span clas",""); ?>      
+                                                <input id="FullName" name="FullName" placeholder="Ingrese el nombre de coworker" class="form-control r-0 light s-12 " 
+                                                type="text" value="<?php echo set_value("FullName")?>">
+                                                <?php echo form_error("FullName", "<span class ='help-block' style='color: red;'>","</span>"); ?>      
                                             </div>
                                             <div class="form-group col-6  m-0">
                                                 <label for="username" class="col-form-label s-12"><i class="icon-user"></i>Nombre de Usuario</label>
-                                                <input id="username" name="Username" placeholder="Nombre de Usuario" class="form-control r-0 light s-12 " type="text">
+                                                <input id="username" name="Username" placeholder="Nombre de Usuario" class="form-control r-0 light s-12 " 
+                                                type="text" value="<?php echo set_value("Username")?>">
+                                                <?php echo form_error("Username", "<span class ='help-block' style='color: red;'>","</span>"); ?>     
                                             </div>
                                         </div>
 
@@ -55,6 +58,7 @@
                                                         <?php endforeach;?>
                                                     <?php endif;?>                                                    
                                                 </select>
+                                                <?php echo form_error("GenderId", "<span class ='help-block' style='color: red;'>","</span>"); ?>  
                                             </div>
 
                                             <div class="form-group col-6 m-0">
@@ -106,20 +110,20 @@
                                         </div>
                                         <div class="form-group col-4 m-0">
                                                 <label for="inputCity" class="col-form-label s-12">Ciudad Domicilio</label>
-                                                <input type="text" class="form-control r-0 light s-12" id="inputCity">
+                                                <input type="text" name="City" class="form-control r-0 light s-12" id="inputCity">
                                         </div>
                                     </div>                              
                                     <div class="form-row">
                                          <div class="form-group col-9 m-0">
                                             <label for="Address"  class="col-form-label s-12">Dirección Domicilio</label>
-                                            <input type="text" class="form-control r-0 light s-12" id="Address"
+                                            <input type="text" name="Address" class="form-control r-0 light s-12" id="Address"
                                                 placeholder="Ingrese una dirección">
                                             </div>                                           
                                     </div>                      
                                     <div class="form-row">
                                         <div class="form-group col-9 m-0">
-                                            <label for="Address"  class="col-form-label s-12">Dirección Oficina</label>
-                                            <input type="text" class="form-control r-0 light s-12" id="Address"
+                                            <label for="AlternativeAddress"  class="col-form-label s-12">Dirección Oficina</label>
+                                            <input type="text" name="AlternativeAddress" class="form-control r-0 light s-12" id="AlternativeAddress"
                                                 placeholder="Ingrese una dirección">
                                         </div>                                            
                                     </div>                                    
@@ -128,28 +132,21 @@
                             
                             <hr>
                             <div class="card-body">
-                                <h5 class="card-title">ENROLLMENT</h5>
+                                <h5 class="card-title">Informacion interna</h5>
                                 <div class="form-row">
                                     <div class="form-group col-5 m-0">
-                                        <label for="roll1" class="col-form-label s-12"># ID NUMBER</label>
-                                        <input id="roll1" placeholder="Enter ID Number" class="form-control r-0 light s-12 " type="text">
+                                        <label for="AccountId" class="col-form-label s-12"># Codigo Contable</label>
+                                        <input id="AccountId" name="AccountId" placeholder="Ingrese el codigo de cliente de contabilidad" class="form-control r-0 light s-12 " type="text">
                                     </div>
                                     <div class="form-group col m-0">
-                                        <label for="roll2" class="col-form-label s-12">CLASS</label>
-                                        <input id="roll2" placeholder="Select Class" class="form-control r-0 light s-12 " type="text">
+                                        <label for="roll2" class="col-form-label s-12">Codigo de Impresora</label>
+                                        <input id="roll2" name="PrinterCode"  placeholder="asignar Codigo de impresora" class="form-control r-0 light s-12 " type="text">
                                     </div>
                                     <div class="form-group col m-0">
-                                        <label for="roll4" class="col-form-label s-12">SECTION</label>
-                                        <input id="roll4" placeholder="Select Class" class="form-control r-0 light s-12 " type="text">
+                                        <label for="roll4" class="col-form-label s-12">Codigo Wifi</label>
+                                        <input id="roll4"name="WifiCode" placeholder="Asignar Codigo Wifi" class="form-control r-0 light s-12 " type="text">
                                     </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group col-4 m-0">
-                                        <label for="joining" class="col-form-label s-12"><i class="icon-calendar mr-2"></i>DATE OF JOINING</label>
-                                        <input id="joining" placeholder="user@email.com" class="form-control r-0 light s-12 datePicker" data-time-picker="false"
-                                               data-format-date='Y/m/d' type="text">
-                                    </div>
+                                </div>                               
                                 </div>
                             </div>
                             <hr>

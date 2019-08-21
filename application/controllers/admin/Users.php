@@ -69,19 +69,15 @@ class Users extends CI_Controller {
         $EnableEmailNotification = $this->input->post("EnableEmailNotification");
         $AccountId = $this->input->post("AccountId");
         $City = $this->input->post("City");
+        $WifiCode = $this->input->post("WifiCode");
+        $PrinterCode = $this->input->post("PrinterCode");
 
-        echo $FullName;
-        echo $this->input->post("FullName");
-
-        $this->form_validation->set_rules(
-            'Username', 'Username',
-            'required|min_length[8]|max_length[24]|is_unique[users.Username]',
-            array(
-                    'required'      => 'Es un campo requerido por favor ingrese %s.',
-                    'is_unique'     => 'Este Usuario %s ya existe por favor verificar con otro nombre de usuario.'
-            )
-    );
-        $this->form_validation->set_rules('Email', 'Email', 'required');
+        
+        $this->form_validation->set_rules("Username", "Username","required|min_length[5]|max_length[24]|is_unique[users.Username]");
+        $this->form_validation->set_rules("FullName", "Nombre de Usuario", "required");        
+        $this->form_validation->set_rules("Email", "Email", "required|is_unique[users.Email]");
+        $this->form_validation->set_rules("RoleId", "RoleId", "required|integer");
+        
 
         if ($this->form_validation->run()) 
         {
@@ -114,7 +110,9 @@ class Users extends CI_Controller {
                 'EnableWebNotification'=> $EnableWebNotification,
                 'EnableEmailNotification'=> $EnableEmailNotification,
                 'AccountId'=> $AccountId, 
-                'City'=> $City
+                'City'=> $City,
+                'WifiCode'=> $WifiCode,
+                'PrinterCode'=> $PrinterCode
             ); 
             
             if ($this->User_model->save($data))
@@ -132,49 +130,5 @@ class Users extends CI_Controller {
         {
             $this->add();
         }
-
-        $data = array(                       
-            'FullName' => $FullName,
-            'CompanyName' => $CompanyName,
-            'UserTypeId' => $UserTypeId,
-            'IsAdmin'=> $IsAdmin,
-            'RoleId'=> $RoleId,
-            'Username'=> $Username,
-            'Email'=> $Email,
-            'Password'=> $Password,
-            'Image'=> $Image,
-            'Status'=> $Status,
-            'MessageCheckedAt'=> $MessageCheckedAt,
-            'ClientId'=> $ClientId,
-            'NotificationCheckedAt'=> $NotificationCheckedAt,
-            'isPrimaryContact'=> $isPrimaryContact,
-            'JobTitle'=> $JobTitle,
-            'DisableLogin'=> $DisableLogin,
-            'Note'=> $Note,
-            'Address'=> $Address,
-            'AlternativeAddress'=> $AlternativeAddress,
-            'Phone'=> $Phone,
-            'AlternativePhone'=> $AlternativePhone,
-            'RTN'=> $RTN,
-            'GenderId'=> $GenderId,
-            'StickyNote'=> $StickyNote,
-            'skype'=> $skype,
-            'EnableWebNotification'=> $EnableWebNotification,
-            'EnableEmailNotification'=> $EnableEmailNotification,
-            'AccountId'=> $AccountId, 
-            'City'=> $City
-        ); 
-        
-        if ($this->User_model->save($data))
-        {
-            redirect(base_url().'admin/users');
-        }
-        else
-        {            
-            $this->session->set_flashdata("error", "No se pudo guardar la información");            
-            redirect(base_url().'admin/users/add');
-        }
-        
-
     }
 }
