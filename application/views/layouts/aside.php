@@ -84,6 +84,23 @@
                     </li>
                 </ul>
             </li>
+            <li class="header light mt-3"><strong>Manteminientos o Catalogos</strong></li>
+            <li class="treeview ">
+                <a href="#">
+                    <i class="icon icon-package text-lime s-18"></i> <span>Manteminientos o Catalogos</span>
+                    <i class="icon icon-angle-left s-18 pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url();?>mantenimiento/usertype"><i class="icon icon-circle-o"></i>Tipos de Coworker</a>
+                    </li>
+                    <li><a href="Tareas.html"><i class="icon icon-circle-o"></i>Tareas o actividades</a>
+                    </li>
+                    <li><a href="Calendario.html"><i class="icon icon-date_range"></i>Calendario</a>
+                    </li>               
+                    <li><a href="Alquileres-Espacios.html"><i class="icon icon-circle-o"></i>Alquileres</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </section>
 </aside>

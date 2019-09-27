@@ -12,7 +12,7 @@
             <div class="row justify-content-between">
                 <ul class="nav nav-material nav-material-white responsive-tab" id="v-pills-tab" role="tablist">
                     <li>
-                        <a class="nav-link"  href="panel-page-users.html"><i class="icon icon-home2"></i>Todos los Cowokers</a>
+                        <a class="nav-link"  href="<?php echo base_url();?>admin/users"><i class="icon icon-home2"></i>Todos los Cowokers</a>
                     </li>
                     <li>
                         <a class="nav-link active"  href="<?php echo base_url();?>admin/users/add" ><i class="icon icon-plus-circle"></i> Agregar un nuevo coworker</a>
